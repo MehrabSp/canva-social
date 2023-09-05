@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a5850c1e-ecd9-417c-a7df-0b1be661372d"
+      }
+    },
+    "owner": "mehrab_sp"
   }
 }
