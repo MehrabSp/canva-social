@@ -2,29 +2,35 @@ import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { width } from "../../util/cc";
+import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 
-function getS(s){
-    console.log(s)
-}
 const Images = () => {
-    Image.getSize("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2q1SK-d1so1cNOabKmRj0a8y38_zI6uryA&usqp=CAU", getS, )
   return (
     <ScrollView style={{ flex: 1, backgroundColor: "black" }}>
       <StatusBar style="auto" />
-      <Image
-    //   width={50}
-        source={{
-          uri: "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/49123/article_aligned%402x.jpg",
-        }}
-        style={{ height: 300, width: "100%", resizeMode: "cover" }}
-      />
-      <View style={{ flexDirection: "row" }}>
+      <View>
+        <View
+          style={{
+            position: "absolute",
+            zIndex: 5,
+            bottom: 0,
+            flexDirection: "row",
+            margin: 20,
+          }}
+        >
+          <Ionicons name="ios-heart-outline" size={20} color="#fff" />
+          <Text style={styles.title}>10k</Text>
+        </View>
         <Image
+          //   width={50}
           source={{
             uri: "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/49123/article_aligned%402x.jpg",
           }}
-          style={{ width: "50%", height: width, resizeMode: "cover" }}
+          style={{ height: 300, width: "100%", resizeMode: "cover" }}
         />
+      </View>
+
+      <View style={{ flexDirection: "row" }}>
         <View style={{ flexDirection: "column", justifyContent: "center" }}>
           <Image
             source={{
@@ -39,13 +45,48 @@ const Images = () => {
             style={{ width: width / 2, height: width / 2 }}
           />
         </View>
+        <View style={{ width, height: width }}>
+          <View
+            style={{
+              position: "absolute",
+              zIndex: 5,
+              bottom: 0,
+              flexDirection: "row",
+              margin: 20,
+            }}
+          >
+            <Ionicons name="ios-heart-outline" size={20} color="#fff" />
+            <Text style={styles.title}>10k</Text>
+          </View>
+          <Image
+            source={{
+              uri: "https://e0.pxfuel.com/wallpapers/799/827/desktop-wallpaper-dark-female-black.jpg",
+            }}
+            style={{ width: "50%", height: width, resizeMode: "contain" }}
+          />
+        </View>
       </View>
-      <Image
-        source={{
-          uri: "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/49123/article_aligned%402x.jpg",
-        }}
-        style={{ height: 300, width: "100%", resizeMode: "cover" }}
-      />
+
+      <View>
+        <View
+          style={{
+            position: "absolute",
+            zIndex: 5,
+            bottom: 0,
+            flexDirection: "row",
+            margin: 20,
+          }}
+        >
+          <Ionicons name="ios-heart-outline" size={20} color="#fff" />
+          <Text style={styles.title}>10k</Text>
+        </View>
+        <Image
+          source={{
+            uri: "https://d26oc3sg82pgk3.cloudfront.net/files/media/edit/image/49123/article_aligned%402x.jpg",
+          }}
+          style={{ height: 300, width: "100%", resizeMode: "cover" }}
+        />
+      </View>
     </ScrollView>
   );
 };
