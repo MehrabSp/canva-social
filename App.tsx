@@ -59,8 +59,8 @@ function App() {
             options={{
               // title: "Images",
               // headerTitleAlign: "center",
-              // statusBarAnimation: "fade",
-              // animation: "slide_from_right",
+              statusBarAnimation: "fade",
+              animation: "slide_from_bottom",
               // headerTintColor: "white",
               // navigationBarColor: "black",
               // statusBarColor: "black",

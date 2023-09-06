@@ -18,8 +18,9 @@ const Images = () => {
       images: [
         "https://e0.pxfuel.com/wallpapers/799/827/desktop-wallpaper-dark-female-black.jpg",
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2q1SK-d1so1cNOabKmRj0a8y38_zI6uryA&usqp=CAU",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS2q1SK-d1so1cNOabKmRj0a8y38_zI6uryA&usqp=CAU",
       ],
-      style: styles.twoImages,
+      style: styles.thImages,
     },
     {
       id: "3",
@@ -44,6 +45,7 @@ const Images = () => {
           <Image source={{uri: item.images[0]}} style={styles.image} />
           <View style={styles.twoImagesContainer}>
             <Image source={{uri: item.images[1]}} style={styles.image} />
+            {/* <Image source={{uri: item.images[2]}} style={styles.image} /> */}
           </View>
         </View>
       );
@@ -82,6 +84,11 @@ const styles = StyleSheet.create({
   twoImages: {
     height: 200,
     flexDirection: "row",
+  },
+  thImages: {
+    height: 200,
+    flexDirection: "row",
+    justifyContent: 'space-between',
   },
   twoImagesContainer: {
     flex: 1,
