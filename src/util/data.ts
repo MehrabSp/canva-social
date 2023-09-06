@@ -49,6 +49,18 @@ export const dataImages = [
             "https://panel.safaraneh.com/wp-content/uploads/2022/06/0618-mexico.jpg",
         style: styles.lastImage,
     },
+    {
+        id: "8",
+        image:
+            "https://arzotravels.com/wp-content/uploads/2017/04/shutterstock_554612293.jpg",
+        style: styles.lastImage,
+    },
+    {
+        id: "9",
+        image:
+            "https://wallpaperaccess.com/full/5576099.jpg",
+        style: styles.lastImage,
+    },
 ];
 
 

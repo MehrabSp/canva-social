@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-// import { StatusBar } from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 // import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 
 import Social from "./src/Home/Social/Social";
@@ -18,9 +18,9 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: 'black' }}>
       <NavigationContainer>
-        {/* <StatusBar style="dark" /> */}
+        <StatusBar style="light" backgroundColor="rgba(255, 255, 255, 0.1)" />
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
@@ -32,13 +32,13 @@ function App() {
             name="Social"
             component={Social}
             options={{
-              title: "Social",
+              // title: "Social",
               headerTitleAlign: "center",
-              statusBarAnimation: "fade",
-              animation: "slide_from_right",
+              // // statusBarAnimation: "fade",
+              // animation: "slide_from_right",
               headerTintColor: "white",
               navigationBarColor: "black",
-              statusBarColor: "black",
+              // // statusBarColor: "black",
               headerStyle: {
                 backgroundColor: "#000",
               },
@@ -59,8 +59,8 @@ function App() {
             options={{
               // title: "Images",
               // headerTitleAlign: "center",
-              statusBarAnimation: "fade",
-              animation: "slide_from_bottom",
+              // statusBarAnimation: "fade",
+              // animation: "slide_from_bottom",
               // headerTintColor: "white",
               // navigationBarColor: "black",
               // statusBarColor: "black",

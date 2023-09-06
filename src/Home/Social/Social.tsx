@@ -10,12 +10,14 @@ import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { width } from "../../util/cc";
 import { dataSocial } from "../../util/data";
+import { StatusBar } from "expo-status-bar";
 
 const Social = () => {
   type ItemProps = { title: string; image: string };
 
   const Item = ({ title, image }: ItemProps) => (
     <View style={styles.container}>
+      <StatusBar style="light" />
       <LinearGradient
         style={{
           height: 250,
