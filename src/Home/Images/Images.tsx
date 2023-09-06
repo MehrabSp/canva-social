@@ -37,7 +37,7 @@ const Images = () => {
   // console.log(showImage, "showImage");
 
   return (
-    <View style={{ flex: 1, backgroundColor: "blue" }}>
+    <View className="flex-1 bg-blue">
       {/* <StatusBar style="auto" /> */}
       <ModalImage modalVisible={showImage} infoImage={infoImage} onPressImage={onPressImage} />
       <FlatList

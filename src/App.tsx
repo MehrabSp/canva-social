@@ -8,7 +8,7 @@ function HomeScreen({ navigation }: any) {
     // console.log(props.navigation.navigate(), 'p')
   
     return (
-      <View style={{ flex: 1 }}>
+      <View className="flex-1 bg-indigo-500">
         <SafeAreaView>
         <Animatable.Text animation="zoomIn">Zoom me up, Scotty</Animatable.Text>
           <LinearGradient

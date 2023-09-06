@@ -7,7 +7,7 @@ const modalShowImage = ({ modalVisible, infoImage, onPressImage }) => {
   try {
     if (infoImage.image != null)
       return (
-        <View style={{ flex: 1 }}>
+        <View className="flex-1">
           <Modal
             animationType="fade"
             transparent
@@ -16,13 +16,14 @@ const modalShowImage = ({ modalVisible, infoImage, onPressImage }) => {
             onRequestClose={onPressImage}
           >
             <Pressable
-              style={{
-                // position: "absolute",
-                // zIndex: 5,
-                backgroundColor: "rgba(255, 255, 255, 0.3)",
-                height: "100%",
-                width: "100%",
-              }}
+            className="flex-1 absolute w-full h-full bg-emerald-900 z-10"
+              // style={{
+              //   // position: "absolute",
+              //   // zIndex: 5,
+              //   backgroundColor: "rgba(255, 255, 255, 0.3)",
+              //   height: "100%",
+              //   width: "100%",
+              // }}
               onPress={onPressImage}
             >
               <View

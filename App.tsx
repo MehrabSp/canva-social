@@ -21,9 +21,9 @@ import HomeScreen from "./src/App";
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+export default function () {
   return (
-    <View style={{ flex: 1, backgroundColor: "black" }}>
+    // <View className="flex-1 bg-black">
       <NavigationContainer>
         <StatusBar style="light" backgroundColor="rgba(255, 255, 255, 0.1)" />
         <Stack.Navigator>
@@ -77,8 +77,6 @@ function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </View>
+    // </View>
   );
 }
-
-export default App;
