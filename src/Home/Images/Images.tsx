@@ -1,18 +1,14 @@
-import {
-  Text,
-  View,
-  RefreshControl,
-  FlatList,
-} from "react-native";
+import { Text, View, RefreshControl, FlatList } from "react-native";
 import React from "react";
 // import { StatusBar } from "expo-status-bar";
 // import { width } from "../../util/cc";
 import { dataImages } from "../../util/data";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import { renderItem } from "./renderItem";
+import { renderItem as Items } from "./renderItem";
+import { modalShowImage as ModalImage } from "./modalShowImage";
 
 const Images = () => {
-
+  const [showImage, setShowImage] = React.useState(false);
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
@@ -22,14 +18,22 @@ const Images = () => {
     }, 5000);
   }, []);
 
-  console.log(refreshing, 'refreshing');
+  const onPressImage = React.useCallback(() => {
+    setShowImage(!showImage);
+  }, [showImage]);
+
+  console.log(refreshing, "refreshing");
+  console.log(showImage, "showImage");
 
   return (
     <View style={{ flex: 1, backgroundColor: "blue" }}>
       {/* <StatusBar style="auto" /> */}
+      <ModalImage modalVisible={showImage} onPressImage={onPressImage} />
       <FlatList
         data={dataImages}
-        renderItem={renderItem}
+        renderItem={(items) => {
+          return <Items {...items} onPressImage={onPressImage} />;
+        }}
         keyExtractor={(item) => item.id}
         // numColumns={3}
         // onLayout={(event) => {

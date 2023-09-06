@@ -14,6 +14,8 @@ import Social from "./src/Home/Social/Social";
 import Images from "./src/Home/Images/Images";
 import HomeScreen from "./src/App";
 
+// import * as ScreenOrientation from 'expo-screen-orientation';
+
 const Stack = createNativeStackNavigator();
 
 function App() {
