@@ -9,8 +9,10 @@ import { modalShowImage as ModalImage } from "./modalShowImage";
 
 const Images = () => {
   const [showImage, setShowImage] = React.useState(false);
+  const [showImage2, setShowImage2] = React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
 
+  console.log(showImage2, '2')
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     setTimeout(() => {
@@ -18,12 +20,21 @@ const Images = () => {
     }, 5000);
   }, []);
 
-  const onPressImage = React.useCallback(() => {
-    setShowImage(!showImage);
+  const onPressImage = React.useCallback(({id}: any) => {
+    console.log(id, 'tt')
+    // if (id.images) {
+      setShowImage(!showImage.show);
+      setShowImage2(id)
+    // }
+    // setShowImage({
+    //   show: !showImage.show,
+    //   image: 'id.image'
+    // });
+    // console.log(id, 'i')
   }, [showImage]);
 
-  console.log(refreshing, "refreshing");
-  console.log(showImage, "showImage");
+  // console.log(refreshing, "refreshing");
+  // console.log(showImage, "showImage");
 
   return (
     <View style={{ flex: 1, backgroundColor: "blue" }}>
@@ -31,8 +42,8 @@ const Images = () => {
       <ModalImage modalVisible={showImage} onPressImage={onPressImage} />
       <FlatList
         data={dataImages}
-        renderItem={(items) => {
-          return <Items {...items} onPressImage={onPressImage} />;
+        renderItem={({item, index}) => {
+          return <Items item={item} index={index} onPressImage={onPressImage} />;
         }}
         keyExtractor={(item) => item.id}
         // numColumns={3}

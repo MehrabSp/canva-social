@@ -22,7 +22,7 @@ const modalShowImage = ({ modalVisible, onPressImage }) => {
             width: "100%",
           }}
         >
-          <Text style={{ color: "white" }}>modalShowImage</Text>
+          <Text style={{ color: "white", margin: 20 }}>{modalVisible.image}</Text>
         </View>
       </Modal>
     </View>
