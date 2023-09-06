@@ -9,10 +9,10 @@ import { modalShowImage as ModalImage } from "./modalShowImage";
 
 const Images = () => {
   const [showImage, setShowImage] = React.useState(false);
-  const [showImage2, setShowImage2] = React.useState(null);
+  const [infoImage, setInfoImage] = React.useState(null);
   const [refreshing, setRefreshing] = React.useState(false);
 
-  console.log(showImage2, '2')
+  // console.log(infoImage, '2')
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
     setTimeout(() => {
@@ -21,10 +21,10 @@ const Images = () => {
   }, []);
 
   const onPressImage = React.useCallback(({id}: any) => {
-    console.log(id, 'tt')
+    // console.log(id, 'tt')
     // if (id.images) {
-      setShowImage(!showImage.show);
-      setShowImage2(id)
+      setShowImage(!showImage);
+      setInfoImage(id)
     // }
     // setShowImage({
     //   show: !showImage.show,
@@ -39,7 +39,7 @@ const Images = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "blue" }}>
       {/* <StatusBar style="auto" /> */}
-      <ModalImage modalVisible={showImage} onPressImage={onPressImage} />
+      <ModalImage modalVisible={showImage} infoImage={infoImage} onPressImage={onPressImage} />
       <FlatList
         data={dataImages}
         renderItem={({item, index}) => {
