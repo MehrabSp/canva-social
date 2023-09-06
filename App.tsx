@@ -1,4 +1,7 @@
-// MRB
+/**
+ * @MehrabSp
+ */
+
 import React from "react";
 import {
   View,
@@ -20,7 +23,7 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <View style={{ flex: 1, backgroundColor: 'black' }}>
+    <View style={{ flex: 1, backgroundColor: "black" }}>
       <NavigationContainer>
         <StatusBar style="light" backgroundColor="rgba(255, 255, 255, 0.1)" />
         <Stack.Navigator>
@@ -69,7 +72,7 @@ function App() {
               // headerStyle: {
               //   backgroundColor: "#000",
               // },
-              headerShown: false
+              headerShown: false,
             }}
           />
         </Stack.Navigator>

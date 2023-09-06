@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Modal, View, Image } from "react-native";
+import { StyleSheet, Text, Modal, View, Image, Pressable } from "react-native";
 import { useState } from "react";
 
 const modalShowImage = ({ modalVisible, infoImage, onPressImage }) => {
@@ -15,23 +15,37 @@ const modalShowImage = ({ modalVisible, infoImage, onPressImage }) => {
             statusBarTranslucent
             onRequestClose={onPressImage}
           >
-            <View
+            <Pressable
               style={{
-                position: "absolute",
-                zIndex: 5,
-                backgroundColor: "black",
+                // position: "absolute",
+                // zIndex: 5,
+                backgroundColor: "rgba(255, 255, 255, 0.3)",
                 height: "100%",
                 width: "100%",
               }}
+              onPress={onPressImage}
             >
-              <Text style={{ color: "white", margin: 20 }}>
-                {modalVisible.image}
-              </Text>
-              <Image
-                source={infoImage.image}
-                style={{ height: '50%', width: "100%", resizeMode: 'contain' }}
-              />
-            </View>
+              <View
+                style={{
+                  marginVertical: "25%",
+                  height: "50%",
+                  width: "100%",
+                  
+                }}
+              >
+                <Text style={{ color: "white", margin: 20 }}>
+                  {modalVisible.image}
+                </Text>
+                <Image
+                  source={infoImage.image}
+                  style={{
+                    flex: 1,
+                    resizeMode: "contain",
+                    marginHorizontal: "3%",
+                  }}
+                />
+              </View>
+            </Pressable>
           </Modal>
         </View>
       );
