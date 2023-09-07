@@ -11,7 +11,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { width } from "../../util/cc";
 import { dataSocial } from "../../util/data";
 import { StatusBar } from "expo-status-bar";
-import { Item, Item2 } from "./Item";
+import { Item, Item2, Item3 } from "./Item";
 
 const Social = () => {
 
