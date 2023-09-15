@@ -16,6 +16,8 @@ import { StatusBar } from "expo-status-bar";
 import Social from "./src/Home/Social/Social";
 import Images from "./src/Home/Images/Images";
 import HomeScreen from "./src/App";
+import { RN1 } from "./src/Home/html_to_RN_1";
+import { Chat } from "./src/Home/chat";
 
 // import * as ScreenOrientation from 'expo-screen-orientation';
 
@@ -25,7 +27,7 @@ export default function () {
   return (
     // <View className="flex-1 bg-black">
       <NavigationContainer>
-        <StatusBar style="light" backgroundColor="rgba(255, 255, 255, 0.1)" />
+        <StatusBar style="auto" backgroundColor="rgba(255, 255, 255, 0.1)" />
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
@@ -72,6 +74,31 @@ export default function () {
               // headerStyle: {
               //   backgroundColor: "#000",
               // },
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="RN1"
+            component={RN1}
+            options={{
+              // title: "Images",
+              // headerTitleAlign: "center",
+              // statusBarAnimation: "fade",
+              animation: "flip",
+              // headerTintColor: "white",
+              // navigationBarColor: "black",
+              // statusBarColor: "black",
+              // headerStyle: {
+              //   backgroundColor: "#000",
+              // },
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Chat"
+            component={Chat}
+            options={{
+              animation: "slide_from_right",
               headerShown: false,
             }}
           />
