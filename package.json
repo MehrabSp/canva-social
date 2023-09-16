@@ -15,7 +15,6 @@
     "@types/react": "~18.2.14",
     "expo": "~49.0.8",
     "expo-linear-gradient": "~12.3.0",
-    "expo-screen-orientation": "~6.0.5",
     "expo-status-bar": "~1.6.0",
     "nativewind": "^2.0.11",
     "react": "18.2.0",

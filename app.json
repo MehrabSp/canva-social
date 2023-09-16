@@ -15,8 +15,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "requireFullScreen": true
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -32,14 +31,6 @@
         "projectId": "a5850c1e-ecd9-417c-a7df-0b1be661372d"
       }
     },
-    "plugins": [
-      [
-        "expo-screen-orientation",
-        {
-          "initialOrientation": "DEFAULT"
-        }
-      ]
-    ],
     "owner": "mehrab_sp"
   }
 }
