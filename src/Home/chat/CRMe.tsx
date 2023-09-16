@@ -8,13 +8,13 @@ import { replaceStringWithJSX } from "./replaceID";
 
 export const CRMe = ({ item, fixPos }) => {
   return (
-    // <View  وقتی این رو ور میدارم عرض متن بهم میریزه!
-    //   style={{
-    //     flexDirection: "row",
-    //     justifyContent: "flex-end",
-    //     marginTop: 2,
-    //   }}
-    // >
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "flex-end",
+        // marginTop: 2,
+      }}
+    >
     <View style={{ marginRight: 53 }}>
       <View
         style={{
@@ -36,6 +36,6 @@ export const CRMe = ({ item, fixPos }) => {
         </Text>
       </View>
     </View>
-    // </View>
+    </View>
   );
 };

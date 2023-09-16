@@ -7,6 +7,11 @@ import { replaceStringWithJSX } from "./replaceID";
 
 export const CR = ({ item, fixPos }) => {
   return (
+    <View
+      style={{
+        flexDirection: "row", //I'dont now :| it's worked, although this is not required, it fixes the width
+      }}
+    >
     <View style={{ marginLeft: 53 }}>
       <View
         style={{
@@ -27,6 +32,7 @@ export const CR = ({ item, fixPos }) => {
           )}
         </Text>
       </View>
+    </View>
     </View>
   );
 };
