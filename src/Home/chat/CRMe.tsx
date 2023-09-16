@@ -29,7 +29,7 @@ export const CRMe = ({ item, fixPos }) => {
           {replaceStringWithJSX(
             item.text,
             fixPos.current.Ids,
-            <Text key={"@" + item.text} style={{ color: "blue" }}>
+            <Text key={"@" + item.text} style={{ color: "orange" }}>
               {fixPos.current.Ids}
             </Text>
           )}
