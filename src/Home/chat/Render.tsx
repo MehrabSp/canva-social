@@ -10,28 +10,31 @@ export const Render = ({ item, me, fixPos }) => {
   //   console.log(match , 'match')
   //   // return <Text style={{color: 'blue'}}>${match}</Text>;
   // });
-
-  // newText
   //   var text = "This is a sample text with an Instagram handle @MehrabSp in it.";
   // var pattern = /@([A-Za-z0-9._]+)/g;
-
-  // console.log(result); // ["@MehrabSp"]
-
-  // console.log(
-  //   replaceStringWithJSX(
-  //     item.text,
-  //     "Hi",
-  //     <Text style={{ color: "yellow" }}>{"Hi"}</Text>
-  //   )
-  // );
+  // var pattern = /@([A-Za-z0-9_]+)/g;
+  const regex = /@(\w+)/g;
+  try {
+    if (item.text.includes("@")) {
+      const matches = item.text.match(regex);
+      console.log(matches[0] ,'mm'); // null
+      fixPos.current.Ids = matches[0]
+    } else {
+      console.log("No usernames found.");
+    }
+  } catch (error) {
+    console.log("err " + error);
+  }
 
   if (item.type == "File") return <Render_File item={item} />;
   if (item.name == me) return <RenderMe item={item} />;
 
   const iFixbool: boolean =
-    fixPos.current !== null ? item.name == fixPos.current : false;
+    fixPos.current.lastName !== null
+      ? item.name == fixPos.current.lastName
+      : false;
 
-  fixPos.current = item.name;
+  fixPos.current.lastName = item.name;
 
   if (iFixbool) return <Render_2PM item={item} />;
   return (
@@ -59,9 +62,9 @@ export const Render = ({ item, me, fixPos }) => {
           <Text key={"Normal-" + item.text}>
             {replaceStringWithJSX(
               item.text,
-              "@",
+              fixPos.current.Ids,
               <Text key={"@" + item.text} style={{ color: "blue" }}>
-                {"@"}
+                {fixPos.current.Ids}
               </Text>
             )}
           </Text>

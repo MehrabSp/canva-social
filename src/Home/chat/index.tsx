@@ -10,6 +10,7 @@ export const Chat = () => {
   const [me, setMe] = useState("Emmy Lou");
   const fixPos = useRef({
     lastName: null,
+    Ids: null
   });
 
   return (

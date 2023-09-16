@@ -15,7 +15,7 @@ export const CMe = ({ item }) => {
       }}
     >
       <View style={{ marginRight: 13 }}>
-        <Text style={{ color: "blue", alignSelf: "flex-end" }}>
+        <Text style={{ color: "black", alignSelf: "flex-end" }}>
           {item.name}
         </Text>
         <View
