@@ -1,16 +1,15 @@
 import { View, Text, Image } from "react-native";
 import { CMe as RenderMe } from "./CMe";
-import { CRMe as Render_2PM } from "./CR";
+import { CRMe as RenderMe_2PM } from "./CRMe";
+import { CR as Render_2PM } from "./CR";
 import { CF as Render_File } from "./CF";
 import { replaceStringWithJSX } from "./replaceID";
 import { findAndsave } from "./findIds";
 
 export const Render = ({ item, me, fixPos }) => {
   findAndsave(item.text, fixPos);
-  // console.log('render!')
 
   if (item.type == "File") return <Render_File item={item} />;
-  if (item.name == me) return <RenderMe item={item} fixPos={fixPos} />;
 
   const iFixbool: boolean =
     fixPos.current.lastName !== null
@@ -18,7 +17,8 @@ export const Render = ({ item, me, fixPos }) => {
       : false;
 
   fixPos.current.lastName = item.name;
-
+  if (item.name == me && iFixbool) return <RenderMe_2PM item={item} fixPos={fixPos} />;
+  if (item.name == me) return <RenderMe item={item} fixPos={fixPos} />;
   if (iFixbool) return <Render_2PM item={item} fixPos={fixPos} />;
   return (
     <View
@@ -35,7 +35,7 @@ export const Render = ({ item, me, fixPos }) => {
         <Text>{item.name}</Text>
         <View
           style={{
-            backgroundColor: "red",
+            backgroundColor: "#f3f4f9",
             paddingVertical: 15,
             paddingLeft: 15,
             paddingRight: 80,

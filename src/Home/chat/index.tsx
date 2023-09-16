@@ -13,7 +13,7 @@ import { chat_data } from "./data";
 import { Render } from "./Render";
 
 export const Chat = () => {
-  const [me, setMe] = useState("Ryan Patrick");
+  const [me, setMe] = useState("Emmy Lou");
   const fixPos = useRef({
     lastName: null,
     Ids: null,
@@ -54,7 +54,7 @@ export const Chat = () => {
             style={[
               {
                 flex: 1,
-                backgroundColor: "whitesmoke",
+                // backgroundColor: "whitesmoke",
                 borderTopWidth: 1,
                 borderColor: "#f5f5f5",
                 marginHorizontal: 10,
