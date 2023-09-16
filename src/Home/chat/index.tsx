@@ -1,11 +1,4 @@
-import {
-  Text,
-  View,
-  ScrollView,
-  FlatList,
-  TextInput,
-  Image,
-} from "react-native";
+import { Text, View, ScrollView, FlatList, TextInput } from "react-native";
 import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "./Header";
@@ -22,7 +15,7 @@ const Chat = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <SafeAreaView>
-        <ScrollView>
+        <ScrollView scrollEnabled={false}>
           <Header />
           <ScrollView
             style={{
@@ -38,6 +31,7 @@ const Chat = () => {
               // paddingVertical: 30,
             }}
             indicatorStyle="black"
+            // scrollEnabled={false}
           >
             <FlatList
               data={chat_data}
@@ -47,13 +41,6 @@ const Chat = () => {
               key={"$"}
               scrollEnabled={false}
               keyExtractor={(_, index) => "$" + index}
-              // keyExtractor={keyExtractor}
-              contentContainerStyle={
-                {
-                  // marginHorizontal: 20,
-                  // marginVertical: 20,
-                }
-              }
             />
           </ScrollView>
 
