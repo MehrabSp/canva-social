@@ -3,31 +3,14 @@ import { CMe as RenderMe } from "./CMe";
 import { CRMe as Render_2PM } from "./CR";
 import { CF as Render_File } from "./CF";
 import { replaceStringWithJSX } from "./replaceID";
+import { findAndsave } from "./findIds";
 
 export const Render = ({ item, me, fixPos }) => {
-  // const regex = /@\w+/g;
-  // const newText = item.text.replace(regex, (match) => {
-  //   console.log(match , 'match')
-  //   // return <Text style={{color: 'blue'}}>${match}</Text>;
-  // });
-  //   var text = "This is a sample text with an Instagram handle @MehrabSp in it.";
-  // var pattern = /@([A-Za-z0-9._]+)/g;
-  // var pattern = /@([A-Za-z0-9_]+)/g;
-  const regex = /@(\w+)/g;
-  try {
-    if (item.text.includes("@")) {
-      const matches = item.text.match(regex);
-      console.log(matches[0] ,'mm'); // null
-      fixPos.current.Ids = matches[0]
-    } else {
-      console.log("No usernames found.");
-    }
-  } catch (error) {
-    console.log("err " + error);
-  }
+  findAndsave(item.text, fixPos);
+  // console.log('render!')
 
   if (item.type == "File") return <Render_File item={item} />;
-  if (item.name == me) return <RenderMe item={item} />;
+  if (item.name == me) return <RenderMe item={item} fixPos={fixPos} />;
 
   const iFixbool: boolean =
     fixPos.current.lastName !== null
@@ -36,7 +19,7 @@ export const Render = ({ item, me, fixPos }) => {
 
   fixPos.current.lastName = item.name;
 
-  if (iFixbool) return <Render_2PM item={item} />;
+  if (iFixbool) return <Render_2PM item={item} fixPos={fixPos} />;
   return (
     <View
       style={{
@@ -52,8 +35,10 @@ export const Render = ({ item, me, fixPos }) => {
         <Text>{item.name}</Text>
         <View
           style={{
-            backgroundColor: "#f3f4f9",
-            padding: 15,
+            backgroundColor: "red",
+            paddingVertical: 15,
+            paddingLeft: 15,
+            paddingRight: 80,
             borderRadius: 20,
             borderTopStartRadius: 1,
             marginTop: 10,

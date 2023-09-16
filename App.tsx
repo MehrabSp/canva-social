@@ -2,24 +2,14 @@
  * @MehrabSp
  */
 
-import React from "react";
-import {
-  View,
-  Text,
-  // StyleSheet,
-} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
-// import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-
 import Social from "./src/Home/Social/Social";
 import Images from "./src/Home/Images/Images";
 import HomeScreen from "./src/App";
 import { RN1 } from "./src/Home/html_to_RN_1";
 import { Chat } from "./src/Home/chat";
-
-// import * as ScreenOrientation from 'expo-screen-orientation';
 
 const Stack = createNativeStackNavigator();
 

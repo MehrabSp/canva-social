@@ -1,4 +1,10 @@
-import { Text, View, ScrollView, FlatList, TextInput } from "react-native";
+import {
+  useWindowDimensions,
+  View,
+  ScrollView,
+  FlatList,
+  TextInput,
+} from "react-native";
 import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "./Header";
@@ -7,30 +13,56 @@ import { chat_data } from "./data";
 import { Render } from "./Render";
 
 export const Chat = () => {
-  const [me, setMe] = useState("Emmy Lou");
+  const [me, setMe] = useState("Ryan Patrick");
   const fixPos = useRef({
     lastName: null,
-    Ids: null
+    Ids: null,
   });
+  const { height, width } = useWindowDimensions();
+
+  const Columns: boolean = width > height;
+  let styleScrollView = {};
+  let styleHeader = {};
+  if (Columns) {
+    // چرخش فعال یا تبلت
+    styleScrollView = {
+      minHeight: 100,
+      maxHeight: 200,
+      marginTop: 10,
+    };
+    styleHeader = {
+      marginTop: 5,
+    };
+  } else {
+    // حالت عادی موبایل
+    styleScrollView = {
+      minHeight: 370,
+      maxHeight: 370,
+      marginTop: 25,
+    };
+    styleHeader = {
+      marginTop: 25,
+    };
+  }
 
   return (
     <View style={{ flex: 1, backgroundColor: "white" }}>
       <SafeAreaView>
         <ScrollView scrollEnabled={false}>
-          <Header />
+          <Header styleHeader={styleHeader} />
           <ScrollView
-            style={{
-              flex: 1,
-              // backgroundColor: "whitesmoke",
-              maxHeight: 370,
-              minHeight: 350,
-              borderTopWidth: 1,
-              borderColor: "#f5f5f5",
-              marginTop: 25,
-              marginHorizontal: 10,
-              paddingHorizontal: 18,
-              // paddingVertical: 30,
-            }}
+            style={[
+              {
+                flex: 1,
+                backgroundColor: "whitesmoke",
+                borderTopWidth: 1,
+                borderColor: "#f5f5f5",
+                marginHorizontal: 10,
+                paddingHorizontal: 18,
+                // paddingVertical: 30,
+              },
+              styleScrollView,
+            ]}
             indicatorStyle="black"
             // scrollEnabled={false}
           >

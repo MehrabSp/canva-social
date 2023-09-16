@@ -5,7 +5,7 @@
 import { View, Text, Image } from "react-native";
 import { replaceStringWithJSX } from "./replaceID";
 
-export const CMe = ({ item }) => {
+export const CMe = ({ item, fixPos }) => {
   return (
     <View
       style={{
@@ -30,9 +30,9 @@ export const CMe = ({ item }) => {
           <Text key={"Normal-" + item.text} style={{ color: "white" }}>
             {replaceStringWithJSX(
               item.text,
-              "@",
+              fixPos.current.Ids,
               <Text key={"@" + item.text} style={{ color: "blue" }}>
-                {"@"}
+                {fixPos.current.Ids}
               </Text>
             )}
           </Text>

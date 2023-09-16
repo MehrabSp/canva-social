@@ -5,7 +5,7 @@
 import { View, Text } from "react-native";
 import { replaceStringWithJSX } from "./replaceID";
 
-export const CRMe = ({ item }) => {
+export const CRMe = ({ item, fixPos }) => {
   return (
     <View style={{ marginLeft: 53 }}>
       <View
@@ -20,9 +20,9 @@ export const CRMe = ({ item }) => {
         <Text key={"Normal-" + item.text}>
             {replaceStringWithJSX(
               item.text,
-              "@",
+              fixPos.current.Ids,
               <Text key={"@" + item.text} style={{ color: "blue" }}>
-                {"@"}
+                {fixPos.current.Ids}
               </Text>
             )}
           </Text>

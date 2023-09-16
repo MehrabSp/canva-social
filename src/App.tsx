@@ -2,7 +2,6 @@ import {
   View,
   Button
 } from "react-native";
-import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 // import { LinearGradient } from "expo-linear-gradient";
 // import * as Animatable from 'react-native-animatable';
