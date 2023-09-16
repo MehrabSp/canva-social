@@ -5,7 +5,7 @@ import {
   FlatList,
   TextInput,
 } from "react-native";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Header } from "./Header";
 import { Feather } from "@expo/vector-icons";
@@ -13,12 +13,17 @@ import { chat_data } from "./data";
 import { Render } from "./Render";
 
 export const Chat = () => {
-  const [me, setMe] = useState("Emmy Lou");
+  const [me, setMe] = useState("Tim Russel");
   const fixPos = useRef({
     lastName: null,
     Ids: null,
   });
   const { height, width } = useWindowDimensions();
+
+  function handleChangheMe(name: string) {
+    if (name != me)
+      setMe(name)
+  }
 
   const Columns: boolean = width > height;
   let styleScrollView = {};
@@ -68,7 +73,9 @@ export const Chat = () => {
           >
             <FlatList
               data={chat_data}
-              renderItem={({ item }) => Render({ item, me, fixPos })}
+              renderItem={({ item }) =>
+                Render({ item, me, fixPos, handleChangheMe })
+              }
               key={"$"}
               scrollEnabled={false}
               keyExtractor={(_, index) => "$" + index}
