@@ -6,8 +6,8 @@ import { Feather } from "@expo/vector-icons";
 import { chat_data } from "./data";
 import { Render } from "./Render";
 
-const Chat = () => {
-  const [me, setMe] = useState("Emmy Lou");
+export const Chat = () => {
+  const [me, setMe] = useState("Jessica Bell");
   const fixPos = useRef({
     lastName: null,
   });
@@ -35,9 +35,7 @@ const Chat = () => {
           >
             <FlatList
               data={chat_data}
-              renderItem={({ item, index }) =>
-                Render({ item, index, me, fixPos })
-              }
+              renderItem={({ item }) => Render({ item, me, fixPos })}
               key={"$"}
               scrollEnabled={false}
               keyExtractor={(_, index) => "$" + index}
@@ -87,5 +85,3 @@ const Chat = () => {
     </View>
   );
 };
-
-export { Chat };
