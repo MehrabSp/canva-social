@@ -35,10 +35,10 @@ export const chat_data = [
         name: 'Tim Russel',
         profile_image: threeImage,
         type: 'File',
-        text: "New design\ndocument⬇️",
         file: {
             name: 'NewYear.sketch',
-            color: 'gold'
+            color: 'gold',
+            size: '120 MB'
         }
     },
     {

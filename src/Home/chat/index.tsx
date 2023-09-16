@@ -7,7 +7,7 @@ import { chat_data } from "./data";
 import { Render } from "./Render";
 
 export const Chat = () => {
-  const [me, setMe] = useState("Jessica Bell");
+  const [me, setMe] = useState("Emmy Lou");
   const fixPos = useRef({
     lastName: null,
   });

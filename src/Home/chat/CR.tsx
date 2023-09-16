@@ -1,5 +1,5 @@
 /**
- *  My repeated chats
+ * Repeated chats
  * @MehrabSp
  */
 import { View, Text } from "react-native";

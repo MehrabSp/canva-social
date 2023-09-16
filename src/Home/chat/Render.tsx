@@ -1,6 +1,7 @@
 import { View, Text, Image } from "react-native";
 import { CMe as RenderMe } from "./CMe";
-import { CRMe as Render_2PM } from "./CRMe";
+import { CRMe as Render_2PM } from "./CR";
+import { CF as Render_File } from "./CF";
 import { replaceStringWithJSX } from "./replaceID";
 
 export const Render = ({ item, me, fixPos }) => {
@@ -24,6 +25,7 @@ export const Render = ({ item, me, fixPos }) => {
   //   )
   // );
 
+  if (item.type == "File") return <Render_File item={item} />;
   if (item.name == me) return <RenderMe item={item} />;
 
   const iFixbool: boolean =
