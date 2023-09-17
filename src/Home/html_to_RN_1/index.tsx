@@ -3,6 +3,7 @@ import {
   FlatList,
   useWindowDimensions,
   ScrollView,
+  Text,
 } from "react-native";
 import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -17,13 +18,16 @@ import Animated, {
   useDerivedValue,
   withTiming,
 } from "react-native-reanimated";
+import { FooterIcons } from "./FooterIcons";
 
 type Theme = "light" | "dark";
 
 function RN1({ navigation }: any) {
   const { height, width } = useWindowDimensions();
   const [theme, setTheme] = useState<Theme>("light");
-  const colors = useRef({
+  // const Theme = useRef<Theme>("light")
+
+  const colors = {
     dark: {
       background: "#3c3f56",
       // circle: '#252525',
@@ -34,13 +38,13 @@ function RN1({ navigation }: any) {
       // circle: '#FFF',
       // text: '#1E1E1E',
     },
-  });
+  };
 
   function changheTheme(theme: Theme) {
     setTheme(theme);
-    console.log('changhe ', theme)
+    // Theme.current = theme;
+    console.log("changhe ", theme);
   }
-
 
   // const progress = useSharedValue(0);
   const progress = useDerivedValue(() => {
@@ -51,7 +55,7 @@ function RN1({ navigation }: any) {
     const backgroundColor = interpolateColor(
       progress.value,
       [0, 1],
-      [colors.current.light.background, colors.current.dark.background]
+      [colors.light.background, colors.dark.background]
     );
 
     return { backgroundColor };
@@ -130,6 +134,8 @@ function RN1({ navigation }: any) {
               numColumns={2}
             />
           )}
+
+          <FooterIcons />
 
           {/* Footer  */}
           <View

@@ -4,7 +4,7 @@ import { Feather, Ionicons } from "@expo/vector-icons";
 import * as Animatable from "react-native-animatable";
 
 const Header = ({ navigation, changheTheme }: any) => {
-  const toggled = useRef(false);
+  const toggled = useRef(true);
 
   return (
     <View
