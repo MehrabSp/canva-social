@@ -4,10 +4,8 @@ import {
   useWindowDimensions,
   ScrollView,
 } from "react-native";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-// import { LinearGradient } from "expo-linear-gradient";
-// import * as Animatable from 'react-native-animatable';
 import { data } from "./data";
 import { Col2 } from "./Column2";
 import { Col3 } from "./Column3";
@@ -20,11 +18,12 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
+type Theme = "light" | "dark";
+
 function RN1({ navigation }: any) {
-  // console.log(props.navigation.navigate(), 'p')
   const { height, width } = useWindowDimensions();
-  const [theme, setTheme] = useState<Theme>("dark");
-  const [colors, setColors] = useState({
+  const [theme, setTheme] = useState<Theme>("light");
+  const colors = useRef({
     dark: {
       background: "#3c3f56",
       // circle: '#252525',
@@ -37,12 +36,11 @@ function RN1({ navigation }: any) {
     },
   });
 
-  function changheTheme(theme: "dark" | "light") {
+  function changheTheme(theme: Theme) {
     setTheme(theme);
     console.log('changhe ', theme)
   }
 
-  type Theme = "light" | "dark";
 
   // const progress = useSharedValue(0);
   const progress = useDerivedValue(() => {
@@ -53,7 +51,7 @@ function RN1({ navigation }: any) {
     const backgroundColor = interpolateColor(
       progress.value,
       [0, 1],
-      [colors.light.background, colors.dark.background]
+      [colors.current.light.background, colors.current.dark.background]
     );
 
     return { backgroundColor };

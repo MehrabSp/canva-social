@@ -1,6 +1,7 @@
 import { View, Pressable } from "react-native";
 import { useRef } from "react";
 import { Feather, Ionicons } from "@expo/vector-icons";
+import * as Animatable from "react-native-animatable";
 
 const Header = ({ navigation, changheTheme }: any) => {
   const toggled = useRef(false);
@@ -24,11 +25,19 @@ const Header = ({ navigation, changheTheme }: any) => {
           justifyContent: "center",
         }}
         onPress={() => {
-          toggled.current = !toggled.current;
           changheTheme(toggled.current ? "dark" : "light");
+          toggled.current = !toggled.current;
         }}
       >
-        <Feather name="sun" size={28} color="orange" />
+        {toggled.current ? (
+          <Animatable.View animation="zoomIn">
+            <Feather name="sun" size={28} color="orange" />
+          </Animatable.View>
+        ) : (
+          <Animatable.View animation="fadeInRightBig">
+            <Feather name="moon" size={28} color="black" />
+          </Animatable.View>
+        )}
       </Pressable>
       <Pressable
         style={{
