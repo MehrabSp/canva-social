@@ -42,7 +42,7 @@ export const Render = ({ item, me, fixPos, handleChangheMe }) => {
             backgroundColor: "#f3f4f9",
             paddingVertical: 15,
             paddingLeft: 15,
-            paddingRight: 80,
+            paddingRight: 50,
             borderRadius: 20,
             borderTopStartRadius: 1,
             marginTop: 10,

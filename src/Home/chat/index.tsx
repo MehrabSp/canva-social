@@ -37,7 +37,7 @@ export const Chat = () => {
     fixPos.current.numFooterPlus = 1; // هندل کردن فوتر موقع چرخش صفحه
     styleScrollView = {
       minHeight: 100,
-      maxHeight: "15%",
+      maxHeight: "17%",
       marginTop: 10,
       paddingHorizontal: 40,
     };
@@ -48,8 +48,8 @@ export const Chat = () => {
       position: "absolute",
       top: 0,
       borderRadius: 10,
-      padding: 10,
-      right: '10%',
+      padding: 5,
+      right: "10%",
     };
   } else {
     // حالت عادی موبایل
@@ -57,7 +57,7 @@ export const Chat = () => {
     fixPos.current.numFooterPlus = 1; // هندل کردن فوتر موقع چرخش صفحه
     styleScrollView = {
       minHeight: 370,
-      maxHeight: "37%",
+      maxHeight: "41%",
       marginTop: 25,
       paddingHorizontal: 18,
     };
@@ -152,11 +152,12 @@ export const Chat = () => {
           <View
             style={[
               {
-                backgroundColor: "whitesmoke",
+                backgroundColor: "white",
                 shadowColor: "#000",
-                shadowOffset: { width: 4, height: 4 },
-                shadowOpacity: 0.7,
-                shadowRadius: 15,
+                shadowOffset: { width: 0, height: 4 },
+                shadowOpacity: 0.8,
+                shadowRadius: 40,
+                elevation: 3,
               },
               styleFooter,
             ]}

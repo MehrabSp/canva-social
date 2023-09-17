@@ -9,17 +9,18 @@ import { DiamondSvg } from "./DiamondSvg";
 
 export const CF = ({ item }) => {
   return (
-    <View style={{ marginLeft: 53 }}>
+    <View style={{ marginLeft: 53, flexDirection: 'row' }}>
       <View
         style={{
           backgroundColor: "white",
-          padding: 10,
+          paddingVertical: 10,
+          paddingHorizontal: 20,
           borderRadius: 5,
           marginTop: 15,
           borderWidth: 1,
           borderColor: "#f3f4f9",
           flexDirection: "row",
-          width: '80%'
+          // width: '80%'
         }}
       >
         <View
