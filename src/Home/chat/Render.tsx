@@ -1,10 +1,10 @@
 import { View, Text, Image, Pressable } from "react-native";
-import { CMe as RenderMe } from "./CMe";
-import { CRMe as RenderMe_2PM } from "./CRMe";
-import { CR as Render_2PM } from "./CR";
-import { CF as Render_File } from "./CF";
-import { replaceStringWithJSX } from "./replaceID";
-import { findAndsave } from "./findIds";
+import { CMe as RenderMe } from "./ChatViews/CMe";
+import { CRMe as RenderMe_2PM } from "./ChatViews/CRMe";
+import { CR as Render_2PM } from "./ChatViews/CR";
+import { CF as Render_File } from "./ChatViews/CF";
+import { replaceStringWithJSX } from "./cc/replaceID";
+import { findAndsave } from "./cc/findIds";
 
 export function Render({ item, me, fixPos, handleChangheMe }) {
   findAndsave(item.text, fixPos);

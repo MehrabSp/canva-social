@@ -1,3 +1,7 @@
+/**
+ * Render Footer (Flatlist)
+ * @MehrabSp
+ */
 import { View, Text, Image } from "react-native";
 
 export function RenderFooter({ item, fixPos }) {

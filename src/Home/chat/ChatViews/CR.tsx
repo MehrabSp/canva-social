@@ -3,7 +3,7 @@
  * @MehrabSp
  */
 import { View, Text } from "react-native";
-import { replaceStringWithJSX } from "./replaceID";
+import { replaceStringWithJSX } from "../cc/replaceID";
 
 export const CR = ({ item, fixPos }) => (
     <View

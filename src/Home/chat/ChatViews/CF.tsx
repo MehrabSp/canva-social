@@ -4,7 +4,7 @@
  */
 import { View, Text } from "react-native";
 import { Feather } from "@expo/vector-icons";
-import { DiamondSvg } from "./DiamondSvg";
+import { DiamondSvg } from "../cc/DiamondSvg";
 
 export const CF = ({ item }) => (
   <View style={{ marginLeft: 53, flexDirection: "row" }}>

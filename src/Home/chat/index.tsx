@@ -11,7 +11,7 @@ import { Header } from "./Header";
 import { Feather } from "@expo/vector-icons";
 import { chat_data } from "./data";
 import { Render } from "./Render";
-import { RenderFooter } from "./RenderFooter";
+import { RenderFooter } from "./Footer";
 
 export function Chat() {
   const [me, setMe] = useState("Tim Russel"); //Re-render all
