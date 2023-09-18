@@ -1,16 +1,6 @@
-import {
-  View,
-  FlatList,
-  useWindowDimensions,
-  ScrollView,
-  Text,
-} from "react-native";
+import { View, ScrollView, Text } from "react-native";
 import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { data } from "./data";
-import { Col2 } from "./Columns/Column2";
-import { Col3 } from "./Columns/Column3";
-import { itemStyle } from "./style";
 import { Header } from "./Header";
 import Animated, {
   interpolateColor,
@@ -20,11 +10,11 @@ import Animated, {
 } from "react-native-reanimated";
 import { FooterIcons } from "./Footer";
 import { colors } from "../../util/cc";
+import { SectionList } from "./Section";
 
 type Theme = "light" | "dark";
 
-function RN1({ navigation }: any) {
-  const { height, width } = useWindowDimensions();
+export function RN1({ navigation }: any) {
   const [theme, setTheme] = useState<Theme>("light");
   // const Theme = useRef<Theme>("light")
 
@@ -58,44 +48,13 @@ function RN1({ navigation }: any) {
   //   return { color };
   // });
 
-  const Columns: boolean = width > height;
-
   return (
     <Animated.View style={[{ flex: 1 }, rStyle]}>
       <SafeAreaView>
         <ScrollView>
           <Header navigation={navigation} changheTheme={changheTheme} />
 
-          {/* Section  */}
-          {Columns ? (
-            <FlatList
-              data={data}
-              renderItem={({ item }) => Col3(itemStyle, item, Columns)}
-              key={"_"}
-              scrollEnabled={false}
-              keyExtractor={(item) => "_" + item.id}
-              // keyExtractor={keyExtractor}
-              contentContainerStyle={{
-                marginHorizontal: 20,
-                marginVertical: 20,
-              }}
-              numColumns={3}
-            />
-          ) : (
-            <FlatList
-              data={data}
-              renderItem={({ item }) => Col2(itemStyle, item, Columns)}
-              key={"#"}
-              scrollEnabled={false}
-              keyExtractor={(item) => "#" + item.id}
-              // keyExtractor={keyExtractor}
-              contentContainerStyle={{
-                marginHorizontal: 20,
-                marginVertical: 20,
-              }}
-              numColumns={2}
-            />
-          )}
+          <SectionList />
 
           {/* Footer Icons  */}
           <FooterIcons progress={progress} colors={colors} />
@@ -112,5 +71,3 @@ function RN1({ navigation }: any) {
     </Animated.View>
   );
 }
-
-export { RN1 };

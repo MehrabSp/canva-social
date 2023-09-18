@@ -5,8 +5,7 @@
 import { View, Text } from "react-native";
 import { replaceStringWithJSX } from "./replaceID";
 
-export const CR = ({ item, fixPos }) => {
-  return (
+export const CR = ({ item, fixPos }) => (
     <View
       style={{
         flexDirection: "row", //I'dont now :| it's worked, although this is not required, it fixes the width
@@ -35,4 +34,3 @@ export const CR = ({ item, fixPos }) => {
     </View>
     </View>
   );
-};

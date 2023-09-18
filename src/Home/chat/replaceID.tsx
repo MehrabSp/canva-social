@@ -1,4 +1,4 @@
-export const replaceStringWithJSX = (str: string, find: string, replace) => {
+export function replaceStringWithJSX(str: string, find: string, replace) {
   // if (!find || find == "@") {
   //   return replace;
   // } else {

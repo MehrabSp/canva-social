@@ -4,7 +4,7 @@ import Animated, {
   interpolateColor,
 } from "react-native-reanimated";
 
-export const FooterAnimation = ({ children, progress, colors }) => {
+export function FooterAnimation({ children, progress, colors }) {
   const iconColor = useAnimatedStyle(() => {
     const backgroundColor = interpolateColor(
       progress.value,

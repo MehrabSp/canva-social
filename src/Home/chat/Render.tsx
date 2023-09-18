@@ -6,7 +6,7 @@ import { CF as Render_File } from "./CF";
 import { replaceStringWithJSX } from "./replaceID";
 import { findAndsave } from "./findIds";
 
-export const Render = ({ item, me, fixPos, handleChangheMe }) => {
+export function Render({ item, me, fixPos, handleChangheMe }) {
   findAndsave(item.text, fixPos);
 
   if (item.type == "File") return <Render_File item={item} />;
@@ -61,4 +61,4 @@ export const Render = ({ item, me, fixPos, handleChangheMe }) => {
       </View>
     </View>
   );
-};
+}

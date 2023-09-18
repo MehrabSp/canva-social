@@ -3,7 +3,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-const Header = ({ styleHeader }) => {
+export function Header({ styleHeader }) {
   const navigation = useNavigation();
 
   return (
@@ -48,6 +48,4 @@ const Header = ({ styleHeader }) => {
       </Pressable>
     </View>
   );
-};
-
-export { Header };
+}

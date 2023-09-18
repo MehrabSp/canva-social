@@ -13,7 +13,7 @@ import { chat_data } from "./data";
 import { Render } from "./Render";
 import { RenderFooter } from "./RenderFooter";
 
-export const Chat = () => {
+export function Chat() {
   const [me, setMe] = useState("Tim Russel"); //Re-render all
   const fixPos = useRef({
     lastName: null,

@@ -1,5 +1,5 @@
 import { Image, View } from "react-native";
-import IconAbsolute from "./IconAbsolute";
+import { IconAbsolute } from "./IconAbsolute";
 
 export const Col3 = (itemStyle: any, item: any, Columns: boolean) => (
   <View style={{ flex: 1, width: "100%", height: "100%" }}>
