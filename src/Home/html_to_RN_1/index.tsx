@@ -8,8 +8,8 @@ import {
 import { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { data } from "./data";
-import { Col2 } from "./Column2";
-import { Col3 } from "./Column3";
+import { Col2 } from "./Columns/Column2";
+import { Col3 } from "./Columns/Column3";
 import { itemStyle } from "./style";
 import { Header } from "./Header";
 import Animated, {
@@ -18,7 +18,8 @@ import Animated, {
   useDerivedValue,
   withTiming,
 } from "react-native-reanimated";
-import { FooterIcons } from "./FooterIcons";
+import { FooterIcons } from "./Footer";
+import { colors } from "../../util/cc";
 
 type Theme = "light" | "dark";
 
@@ -27,26 +28,12 @@ function RN1({ navigation }: any) {
   const [theme, setTheme] = useState<Theme>("light");
   // const Theme = useRef<Theme>("light")
 
-  const colors = {
-    dark: {
-      background: "#3c3f56",
-      // circle: '#252525',
-      // text: '#F8F8F8',
-    },
-    light: {
-      background: "#eaebf5",
-      // circle: '#FFF',
-      // text: '#1E1E1E',
-    },
-  };
-
   function changheTheme(theme: Theme) {
     setTheme(theme);
     // Theme.current = theme;
-    console.log("changhe ", theme);
+    // console.log("changhe ", theme);
   }
 
-  // const progress = useSharedValue(0);
   const progress = useDerivedValue(() => {
     return theme === "dark" ? withTiming(1) : withTiming(0);
   }, [theme]);
@@ -60,16 +47,6 @@ function RN1({ navigation }: any) {
 
     return { backgroundColor };
   });
-
-  // const rCircleStyle = useAnimatedStyle(() => {
-  //   const backgroundColor = interpolateColor(
-  //     progress.value,
-  //     [0, 1],
-  //     [colors.light.circle, colors.dark.circle]
-  //   );
-
-  //   return { backgroundColor };
-  // });
 
   // const rTextStyle = useAnimatedStyle(() => {
   //   const color = interpolateColor(
@@ -85,21 +62,6 @@ function RN1({ navigation }: any) {
 
   return (
     <Animated.View style={[{ flex: 1 }, rStyle]}>
-      {/* //     <Animated.View style={[styles.container, rStyle]}>
-
-//       <Animated.Text style={[styles.text, rTextStyle]}>Theme</Animated.Text>
-//       <Animated.View style={[styles.circle, rCircleStyle]}>
-//         <Switch
-//           value={theme === 'dark'}
-//           onValueChange={(toggled) => {
-//             setTheme(toggled ? 'dark' : 'light');
-//           }}
-//           trackColor={SWITCH_TRACK_COLOR}
-//           thumbColor={'violet'}
-//         />
-//       </Animated.View>
-//     </Animated.View> */}
-
       <SafeAreaView>
         <ScrollView>
           <Header navigation={navigation} changheTheme={changheTheme} />
@@ -135,7 +97,8 @@ function RN1({ navigation }: any) {
             />
           )}
 
-          <FooterIcons />
+          {/* Footer Icons  */}
+          <FooterIcons progress={progress} colors={colors} />
 
           {/* Footer  */}
           <View
